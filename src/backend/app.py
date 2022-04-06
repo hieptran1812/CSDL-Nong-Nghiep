@@ -1,24 +1,24 @@
+# import sys
+
 import logging
 logging.basicConfig(filename='server.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 from flask import Flask, jsonify, request, session, redirect
 from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
 
-from configDB import db
-
-from loginHandler import login, currentUser
-from pushDatafromDevices import getDataFromTestPost, getDataFromRectifier
-from notifications import getNumberOfNoti, getNotifications, editStatusNoti, forgotPassword, signUp
-
-import datetime
-# import sys
 import json
-# import ssl
-
 import uvicorn
 
 from bson import ObjectId
+# from configDB import db
 logging.info("Start API")
+
+database_name = "csdlnn"
+
+# client = pymongo.MongoClient("mongodb+srv://hiep:hackathon@cluster0.eriug.mongodb.net/csdlnn?retryWrites=true&w=majority")
+import sys
+client = pymongo.MongoClient("mongodb+srv://hiep:hackathon@cluster0.loo8n.mongodb.net/csdlnn?retryWrites=true&w=majority")
+db = client.get_database(database_name)
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -32,18 +32,18 @@ def running():
 
 ################ Sign in, sign out ##################
 
-@app.route('/api/login', methods=['POST'])
-def index():
-  if request.method == 'POST':
-    return login()
+# @app.route('/api/login', methods=['POST'])
+# def index():
+#   if request.method == 'POST':
+#     return login()
 
-@app.route('/api/signUp', methods=['POST'])
-def register():
-  return signUp()
+# @app.route('/api/signUp', methods=['POST'])
+# def register():
+#   return signUp()
 
-@app.route('/api/forgotpassword', methods=['POST'])
-def postForgotPassword():
-  return forgotPassword()
+# @app.route('/api/forgotpassword', methods=['POST'])
+# def postForgotPassword():
+#   return forgotPassword()
 
 ################ Dashboard ##############
 
@@ -189,7 +189,7 @@ def get():
 if __name__ == "__main__":
     print('run App......')
     # app.run(port=5000,host='0.0.0.0',ssl_context=("../../../../../etc/nginx/certs/cpsmart_net.crt", "../../../../../etc/nginx/certs/cpsmart_net.key"), threaded=True)
-    uvicorn("app:app", port=5000,host='0.0.0.0')
-    # app.run(port=5000,host='0.0.0.0')
+    # uvicorn("app:app", port=5000,host='0.0.0.0')
+    app.run(port=5000,host='0.0.0.0')
     
     
