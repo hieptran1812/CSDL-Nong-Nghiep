@@ -1,0 +1,38 @@
+.general {
+    width: 100%;
+}
+
+.map {
+    padding: 20px;
+    margin: 20px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  }
+
+.search {
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.title {
+    padding: 20px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note {
+    margin-left: 40px;
+}
+
+.findAddress{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #d0d31e;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
