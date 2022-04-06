@@ -47,7 +47,7 @@ def running():
 
 ################ Dashboard ##############
 
-@app.route('/api/dashboardList/', methods=['GET'])
+@app.route('/api/dashboardList', methods=['GET'])
 def getDashboard():
   devices = []
   # print(currentUser['role'])
@@ -171,7 +171,7 @@ def getUsers():
 #         devices.append({'maChuoi': doc['maChuoi'],})
 #   return jsonify(devices)
 
-@app.route('/api/rectifierTransformerList/', methods=['GET'])
+@app.route('/api/rectifierTransformerList', methods=['GET'])
 def get():
   devices = []
   # print(currentUser['role'])
