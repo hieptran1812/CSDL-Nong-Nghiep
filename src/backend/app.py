@@ -23,7 +23,7 @@ db = client.get_database(database_name)
 app = Flask(__name__)
 cors = CORS(app)
 app.config['JSON_AS_ASCII'] = False
-app.config['CORS_HEADERS'] = 'Content-Type'
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 @cross_origin()
