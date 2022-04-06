@@ -25,5 +25,5 @@ yarn-error.log*
 # ./**/server.log
 # *.log
 ./*backend/configDB.py
-.log
-.env
+log
+*.env
